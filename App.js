@@ -24,14 +24,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Contact from './contact/Contact';
+import ContactList from './contact/ContactList';
+import ContactDashboard from './contact/ContactDashboard';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar />
       <SafeAreaView>
-        <Contact name="John Doe" phone="434-434-4343"/>
-        <Contact name="Jane Doe" />
+        <ContactDashboard/>
       </SafeAreaView>
     </>
   );

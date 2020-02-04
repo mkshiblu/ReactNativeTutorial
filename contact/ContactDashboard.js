@@ -8,13 +8,16 @@ import {
     StatusBar,
     Button,
 } from 'react-native';
+import ContactList from './ContactList';
+import ContactForm from './ContactForm';
 
-export default function Contact({ name, phone }) {
+export default function ContactDashboard(props) {
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>{name}</Text>
-            <Text>{phone}</Text>
+        <View>
+            <Button title='+' />
+            <ContactForm/>
+            <ContactList/>
         </View>
     );
 }
@@ -22,7 +25,6 @@ export default function Contact({ name, phone }) {
 const styles = StyleSheet.create({
     container: {
         padding: 10,
-        backgroundColor: '#EEEEEE'
     },
     title: {
         fontWeight: 'bold'
