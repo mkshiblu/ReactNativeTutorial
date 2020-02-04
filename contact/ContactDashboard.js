@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 import ContactList from './ContactList';
 import ContactForm from './ContactForm';
+import CollapsibleContactForm from './CollapsibleContactForm';
 
 export default function ContactDashboard(props) {
 
     return (
         <View>
-            <Button title='+' />
-            <ContactForm/>
-            <ContactList/>
+            <CollapsibleContactForm style={styles.form} />
+            <ContactList />
         </View>
     );
 }
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
     },
-    title: {
-        fontWeight: 'bold'
+    form: {
+       padding: 10
     }
 });

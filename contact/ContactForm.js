@@ -26,7 +26,6 @@ export default function ContactForm(props) {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 10,
         padding: 10,
         borderColor: 'darkgray',
         borderWidth: 1,
