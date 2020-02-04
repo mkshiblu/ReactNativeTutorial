@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
     SafeAreaView,
     StyleSheet,
@@ -11,14 +11,20 @@ import {
 } from 'react-native';
 
 export default function ContactForm(props) {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const handleCreate = useCallback(() => {
+        props.onSubmit({ name, phone });
+    });
 
     return (
         <View style={styles.container}>
-            <TextInput placeholder="Enter name"></TextInput>
-            <TextInput placeholder="Enter phone"></TextInput>
+            <TextInput placeholder="Enter name" onChangeText={(text) => setName(text)} />
+            <TextInput placeholder="Enter phone" onChangeText={(text) => setPhone(text)} />
             <View style={styles.buttonGroup}>
-                <Button title='Cancel' color='red' />
-                <Button title='Create' />
+                <Button title='Cancel' color='red' onPress={props.onCancel} />
+                <Button title='Create' onPress={handleCreate} />
             </View>
         </View>
     );

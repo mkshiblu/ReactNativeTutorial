@@ -31,8 +31,8 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar />
-      <SafeAreaView>
-        <ContactDashboard/>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ContactDashboard />
       </SafeAreaView>
     </>
   );
